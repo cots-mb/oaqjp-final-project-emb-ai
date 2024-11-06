@@ -22,7 +22,7 @@ def emotion_detector(text_to_analyze):
     
     if response.status_code == 200:
         
-        return response.json().get('text')
+        return  response.text  #response.json().get('text')
     else:
         
         response.raise_for_status()
