@@ -28,7 +28,7 @@ def emotion_detector(text_to_analyze):
 
         print("\n".join("{}\t{}".format(k, v) for k, v in emo.items()))
        
-        #return emo
+        return dominant_emo
 
     else:
         
