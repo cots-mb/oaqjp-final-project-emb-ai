@@ -18,11 +18,14 @@ def emotion_detector(text_to_analyze):
     
     
     response = requests.post(url, headers=headers, json=payload)
-    
+    response = requests.post(url, headers=headers, json=payload)
+    data = dict(json.loads(response.text))
+    emo = dict(data["emotionPredictions"][0])
     
     if response.status_code == 200:
         
-        return  response.text  #response.json().get('text')
+        return emo.get('emotion')
+
     else:
         
         return response.raise_for_status()
